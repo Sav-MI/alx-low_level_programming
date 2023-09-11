@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+	char small;
+	char ex1;
+	char ex2;
+
+	small = 'a';
+	ex1 = 'e';
+	ex2 = 'q';
+
+	while (small <= z)
+	{
+		if (small != ex1 && small != ex2)
+			putchar(small);
+		small++;
+	}
+	printf("\n");
+
+	return (0);
+}
