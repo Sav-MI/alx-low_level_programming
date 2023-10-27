@@ -5,25 +5,23 @@
  * @s: The string
  * Return: The string
  */
-char *rot13(char *s)
+
+char *rot13(char * restrict en)
 {
-	int i, j;
-	char r[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
-	char alpha[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char boolean;
+  char encode[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+  char al[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+  unsigned int pp, oo, j;
 
-	for (i = 0; s[i] != '\0'; i++)
-	{
-		boolean = 0;
-		for (j = 0; alpha[j] != '\0' && boolean == 0; j++)
-		{
-			if (s[i] == alpha[j])
-			{
-				s[i] = r[j];
-				boolean = 1;
-			}
-		}
-	}
+  for (oo = 0; en[oo] != '\0'; oo++){
+    j = 0;
+    for (pp = 0; al[pp] != '\0' && j == 0; pp++){
+      if (en[oo] == al[pp]){
+	en[oo] = encode[pp];
+	j = 1;
+      }
+    }
+  }
 
-	return (s);
+  return en;
 }
+
