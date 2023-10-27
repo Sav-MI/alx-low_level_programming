@@ -13,6 +13,9 @@ unsigned int binary_to_uint(const char *b)
 	unsigned int oo = 0;
 	char c;
 
+	if (b == NULL)
+		return (0);
+
 	while ((c = b[oo++]))
 		{
 		if (c != '1' && c != '0')
